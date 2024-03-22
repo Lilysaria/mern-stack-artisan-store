@@ -12,6 +12,7 @@ const app = express();
 
 const userRouter = require("./routes/api/users")
 const postRouter = require('./routes/api/posts')
+const productRouter = require('./routes/api/products')
 // add in when the app is ready to be deployed
 // app.use(favicon(path.join(__dirname, 'build', 'favicon.ico')));
 app.use(logger("dev"));
@@ -28,6 +29,7 @@ app.use(require("./config/auth"));
 // api routes must be before the "catch all" route
 app.use("/api/users", userRouter);
 app.use('/api/posts', postRouter);
+app.use('/api/products', productRouter);
 
 // "catch all" route
 app.get('/*', function(req, res) {

@@ -1,27 +1,31 @@
 import { useState, useEffect } from "react";
+import { useParams } from "react-router-dom";
 import ProductList from "../../components/ProductList/ProductList"
 import ProductCard from "../../components/ProductCard/ProductCard";
 import AddProductButton from "../../components/AddProductButton/AddProductButton"
 import AddProductForm from "../../components/AddProductForm/AddProductForm"
-import SingleProductPage from "../SingleProductPage/SingleProductPage";
-import NavBar from "../../components/NavBar/NavBar";
-import { Grid } from "semantic-ui-react";
+import { Image, Grid } from "semantic-ui-react";
 import tokenService from '../../utils/tokenService';
+// this page is very similiar to ProductsPage.jsx
+export default function SingleProductPage() {
 
-export default function ProductsPage() {
-    const [products, setProducts] = useState([]);
+
+
+
+    const { productId } = useParams();
+    const [product, setProduct] = useState([]);
 
 
 
     // C(R)UD
-  async function getProducts() {
+  async function getProduct() {
     
     try {
 
 		// This is going to express to get the posts
 		// so this is the start of loading
 
-      const response = await fetch("/api/products", {
+      const response = await fetch(`/api/products/${productId}`, {
         method: "GET",
         headers: {
           // convention for sending jwts in a fetch request
@@ -36,7 +40,7 @@ export default function ProductsPage() {
       // CHECK THE DATA then update state!
       console.log(data);
       
-      setProducts(data);
+      setProduct(data);
     } catch (err) {
       console.log(err);
     }
@@ -53,21 +57,27 @@ export default function ProductsPage() {
     // This useEffect is called when the page loads
 
     // Don't forget to call the function
-    getProducts();
+    getProduct();
   }, []);
     return (
 
-    <Grid>
-      <Grid.Row>
-        <Grid.Column>
-        <AddProductButton />
-        </Grid.Column>
-      </Grid.Row>
-      <Grid.Row centered>
-        <Grid.Column style={{ maxWidth: 750 }}>
-          <ProductList products={products} />
-        </Grid.Column>
-      </Grid.Row>
-    </Grid>
+        <Grid>
+        <Grid.Row>
+          <Grid.Column>
+          </Grid.Column>
+        </Grid.Row>
+        <Grid.Row centered>
+          <Grid.Column style={{ maxWidth: 750 }}>
+            {product && (
+              <>
+                <h2>{product.name}</h2>
+                <Image src={product.imageUrl} alt={product.name} />
+                <p>Description: {product.description}</p>
+                <p>Price: ${product.price}</p>
+              </>
+            )}
+          </Grid.Column>
+        </Grid.Row>
+      </Grid>
     );
-}
+  }

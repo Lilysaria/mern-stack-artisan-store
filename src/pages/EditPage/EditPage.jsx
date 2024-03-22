@@ -34,7 +34,7 @@ export default function EditPage() {
         // this is recieving and parsing the json from express
         const data = await response.json();
         console.log(data);
-        setProduct(data.product);
+        setProduct(data);
     
       } catch (err) {
         console.log(err.message);
