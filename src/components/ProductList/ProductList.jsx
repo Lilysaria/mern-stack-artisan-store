@@ -1,12 +1,15 @@
 
 import ProductCard from '../../components/ProductCard/ProductCard'
 import { Card } from 'semantic-ui-react'
+import './ProductList.css';
 
 export default function ProductList({ products }) {
   return (
-    <div>
+    <div className="product-grid">
       {products.map(product => (
-        <ProductCard key={product._id} product={product} />
+          <div className="product-card" key={product._id}>
+          <ProductCard product={product} />
+          </div>
       ))}
     </div>
   );

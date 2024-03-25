@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
+import EditButton from '../../components/EditButton/EditButton';
 import ProductList from "../../components/ProductList/ProductList"
 import ProductCard from "../../components/ProductCard/ProductCard";
 import AddProductButton from "../../components/AddProductButton/AddProductButton"
@@ -74,6 +75,7 @@ export default function SingleProductPage() {
                 <Image src={product.imageUrl} alt={product.name} />
                 <p>Description: {product.description}</p>
                 <p>Price: ${product.price}</p>
+                <EditButton productId={productId} />
               </>
             )}
           </Grid.Column>

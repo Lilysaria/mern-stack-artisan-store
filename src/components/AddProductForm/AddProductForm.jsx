@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { Button, Form, Segment } from 'semantic-ui-react'
+import './AddProductForm.css';
 
 export default function AddProductForm({handleAddProduct}) {
 const [state, setState] = useState({
@@ -25,6 +26,7 @@ function handleSubmit(e){
 }
 
 return (
+  <div className="add-product-form-container">
     <Segment>
     <Form autoComplete="off" onSubmit={handleSubmit}>
       <Form.Input
@@ -39,7 +41,7 @@ return (
         className="form-control"
         type="description"
         name="description"
-        placeholder="product descriptione"
+        placeholder="product description"
         onChange={handleChange}
       />
       <Form.Input
@@ -53,14 +55,14 @@ return (
         className="form-control"
         type="number"
         name="price"
-        placeholder="pricec"
+        placeholder="price"
         onChange={handleChange}
       />
       <Button type="submit" className="btn">
-        ADD PUPPY
+        add product
       </Button>
     </Form>
   </Segment>
-
+</div>
 );
 }

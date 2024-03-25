@@ -1,6 +1,28 @@
 .sidenav {
-height: 100%;
-width: 200px;
-background-color: rgb(232, 152, 252);
-padding-top: 20px;
+    height: 100%;
+    width: 200px;
+    background-color: rgb(96, 151, 197);
+    padding-top: 20px;
+    position: fixed;
+    z-index: 1;
+    overflow-x: hidden;
+}
+
+.sidenav a {
+    padding: 10px 15px;
+    text-decoration: none;
+    font-size: 20px;
+    color: white;
+    display: block;
+    transition: 0.3s;
+}
+
+.sidenav a:hover {
+    color: #f1f1f1;
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+.sidenav a.active {
+    background-color: #ddd;
+    color: black;
 }
