@@ -1,73 +1,38 @@
-import { useState, useEffect } from "react";
-import ProductList from "../../components/ProductList/ProductList"
-import ProductCard from "../../components/ProductCard/ProductCard";
-import AddProductButton from "../../components/AddProductButton/AddProductButton"
-import AddProductForm from "../../components/AddProductForm/AddProductForm"
-import SingleProductPage from "../SingleProductPage/SingleProductPage";
-import NavBar from "../../components/NavBar/NavBar";
-import { Grid } from "semantic-ui-react";
-import tokenService from '../../utils/tokenService';
+import React, { useState, useEffect } from 'react';
+import { Grid } from 'semantic-ui-react';
+import ProductList from '../../components/ProductList/ProductList';
 
-export default function ProductsPage() {
-    const [products, setProducts] = useState([]);
+const ProductsPage = () => {
+  const [products, setProducts] = useState([]);
 
-
-
-    // C(R)UD
   async function getProducts() {
-    
     try {
+      const response = await fetch('/api/products');
 
-		// This is going to express to get the posts
-		// so this is the start of loading
-
-      const response = await fetch("/api/products", {
-        method: "GET",
-        headers: {
-          // convention for sending jwts in a fetch request
-          Authorization: "Bearer " + tokenService.getToken(),
-          // We send the token, so the server knows who is making the
-          // request
-        },
-      });
+      if (!response.ok) {
+        throw new Error(`HTTP error! Status: ${response.status}`);
+      }
 
       const data = await response.json();
-      // AFTER THIS WE HAVE THE DATA BACK FROM SERVER
-      // CHECK THE DATA then update state!
-      console.log(data);
-      
       setProducts(data);
     } catch (err) {
-      console.log(err);
+      console.error('Error fetching products:', err);
     }
   }
 
-
-   function handleButtonClick() {
-    setProducts()
-   }
-
-
-   
   useEffect(() => {
-    // This useEffect is called when the page loads
-
-    // Don't forget to call the function
     getProducts();
   }, []);
-    return (
 
+  return (
     <Grid>
-      <Grid.Row>
-        <Grid.Column>
-        <AddProductButton />
-        </Grid.Column>
-      </Grid.Row>
       <Grid.Row centered>
         <Grid.Column style={{ maxWidth: 750 }}>
           <ProductList products={products} />
         </Grid.Column>
       </Grid.Row>
     </Grid>
-    );
-}
+  );
+};
+
+export default ProductsPage;
