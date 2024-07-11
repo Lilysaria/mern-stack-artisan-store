@@ -1,28 +1,224 @@
-.sidenav {
-    height: 100%;
-    width: 200px;
-    background-color: rgb(96, 151, 197);
-    padding-top: 20px;
-    position: fixed;
-    z-index: 1;
-    overflow-x: hidden;
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Oswald:wght@500&display=swap");
+
+$primary-color: #ecad29;
+$text-color: #FFFFFFDD;
+
+body {
+  margin: 0;
+  background-color: #1a1a1a;
+  color: $text-color;
+  position: relative;
+  overflow: hidden;
+  font-family: "Inter", sans-serif;
 }
 
-.sidenav a {
-    padding: 10px 15px;
-    text-decoration: none;
-    font-size: 20px;
-    color: white;
-    display: block;
-    transition: 0.3s;
+nav {
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  color: #ffffff99;
+  z-index: 50;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 20px 36px;
+  font-weight: 500;
+  svg {
+    width: 20px;
+    height: 20px;
+  }
+  .svg-container {
+    width: 20px;
+    height: 20px;
+  }
+  > div {
+    display: inline-flex;
+    align-items: center;
+    text-transform: uppercase;
+    font-size: 14px;
+    &:first-child {
+      gap: 10px;
+    }
+    &:last-child {
+      gap: 24px;
+      > .active {
+        position: relative;
+        &:after {
+          bottom: -8px;
+          left: 0;
+          right: 0;
+          position: absolute;
+          content: "";
+          height: 3px;
+          border-radius: 99px;
+          background-color: $primary-color;
+        }
+      }
+    }
+  }
 }
 
-.sidenav a:hover {
-    color: #f1f1f1;
-    background-color: rgba(0, 0, 0, 0.1);
+.nav-items {
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
 }
 
-.sidenav a.active {
-    background-color: #ddd;
-    color: black;
+.indicator {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  height: 5px;
+  z-index: 60;
+  background-color: $primary-color;
+}
+
+.details {
+  z-index: 22;
+  position: absolute;
+  top: 240px;
+  left: 60px;
+  color: #FFFFFF; 
+  .place-box {
+    height: 46px;
+    overflow: hidden;
+    .text {
+      padding-top: 16px;
+      font-size: 20px;
+      &:before {
+        top: 0;
+        left: 0;
+        position: absolute;
+        content: "";
+        width: 30px;
+        height: 4px;
+        border-radius: 99px;
+        background-color: white;
+      }
+    }
+  }
+  .title-1,
+  .title-2 {
+    font-weight: 600;
+    font-size: 72px;
+    font-family: "Oswald", sans-serif;
+    padding-top: 11px;
+  }
+  .title-box-1,
+  .title-box-2 {
+    margin-top: 2px;
+    height: 100px;
+    padding-top: 7px;
+  }
+  .desc {
+    margin-top: 16px;
+    width: 500px;
+  }
+  .cta {
+    width: 500px;
+    margin-top: 24px;
+    display: flex;
+    align-items: center;
+    > .bookmark {
+      border: none;
+      background-color: $primary-color;
+      width: 36px;
+      height: 36px;
+      border-radius: 99px;
+      color: white;
+      display: grid;
+      place-items: center;
+      svg {
+        width: 20px;
+        height: 20px;
+      }
+    }
+    > .discover {
+      border: 1px solid #ffffff;
+      background-color: transparent;
+      height: 36px;
+      border-radius: 99px;
+      color: #ffffff;
+      padding: 4px 24px;
+      font-size: 12px;
+      margin-left: 16px;
+      text-transform: uppercase;
+    }
+  }
+}
+
+.pagination {
+  position: absolute;
+  left: 0;
+  top: 0;
+  display: inline-flex;
+  > .arrow {
+    z-index: 60;
+    width: 50px;
+    height: 50px;
+    border-radius: 999px;
+    border: 2px solid #ffffff55;
+    display: grid;
+    place-items: center;
+    &:nth-child(2){
+      margin-left: 20px;
+    }
+    svg {
+      width: 24px;
+      height: 24px;
+      stroke-width: 2;
+      color: #ffffff99;
+    }
+  }
+  .progress-sub-container{
+    margin-left: 24px;
+    z-index: 60;
+    width: 500px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    .progress-sub-background{
+      width: 500px;
+      height: 3px;
+      background-color: #ffffff33;
+      .progress-sub-foreground{
+        height: 3px;
+        background-color: $primary-color;
+      }
+    }
+  }
+  .slide-numbers{
+    width: 50px;
+    height: 50px;
+    overflow: hidden;
+    z-index: 60;
+    position: relative;
+    .item{
+      width: 50px;
+      height: 50px;
+      position: absolute;
+      color: white;
+      top: 0;
+      left: 0;
+      display: grid;
+      place-items: center;
+      font-size: 32px;
+      font-weight: bold;
+    }
+  }
+}
+
+.cover {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: #fff;
+  z-index: 20;
+  background-image: url('https://res.cloudinary.com/dgtqptpu1/image/upload/v1719958426/fairygardien5_ailu6w.jpg');
+  background-size: cover;
+  background-position: center;
 }
