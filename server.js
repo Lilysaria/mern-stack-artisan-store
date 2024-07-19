@@ -26,15 +26,14 @@ app.use('/api/products', productRouter);
 app.use('/api/orders', orderRouter);
 app.use('/api/payments', paymentRouter);
 
-if (process.env.IS_PRODUCTION) {
-  const manifest = require('./dist/manifest.json');
+if (process.env.NODE_ENV === 'production') {
   app.use(express.static(path.join(__dirname, "dist")));
-  app.get('/*', function(req, res) {
-    res.render(path.join(__dirname, 'dist', 'index.ejs'), { manifest });
+  app.get('/*', (req, res) => {
+    res.sendFile(path.join(__dirname, 'dist', 'index.html'));
   });
 } else {
-  app.get('/*', function(req, res) {
-    res.sendFile(path.join(__dirname, './', 'index.html'));
+  app.get('/*', (req, res) => {
+    res.sendFile(path.join(__dirname, 'index.html'));
   });
 }
 
