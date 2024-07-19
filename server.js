@@ -26,18 +26,15 @@ app.use('/api/products', productRouter);
 app.use('/api/orders', orderRouter);
 app.use('/api/payments', paymentRouter);
 
-if (process.env.NODE_ENV === 'production') {
-  app.use(express.static(path.join(__dirname, "dist")));
-  app.get('/*', (req, res) => {
-    res.sendFile(path.join(__dirname, 'dist', 'index.html'));
-  });
-} else {
-  app.get('/*', (req, res) => {
-    res.sendFile(path.join(__dirname, 'index.html'));
-  });
-}
+// Serve static assets
+app.use(express.static(path.join(__dirname, "dist")));
 
-const { PORT = 8000 } = process.env;
+// Catch-all route for SPA
+app.get('/*', function(req, res) {
+  res.sendFile(path.resolve(__dirname, 'dist', 'index.html'));
+});
+
+const PORT = process.env.PORT || 8000;
 app.listen(PORT, () => {
   console.log(`App running on port ${PORT}`);
 });
