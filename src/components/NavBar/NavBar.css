@@ -1,12 +1,11 @@
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Oswald:wght@500&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Oswald:wght@500&display=swap');
 
 body {
   margin: 0;
   background-color: #1a1a1a;
   color: blue;
   position: relative;
-  overflow: hidden;
-  font-family: "Inter", sans-serif;
+  font-family: 'Inter', sans-serif;
 }
 
 nav {
@@ -23,7 +22,7 @@ nav {
   font-weight: 500;
 }
 
-nav svg, 
+nav svg,
 nav .svg-container {
   width: 20px;
   height: 20px;
@@ -53,10 +52,11 @@ nav > div:last-child > .active:after {
   left: 0;
   right: 0;
   position: absolute;
-  content: "";
+  content: '';
   height: 3px;
   border-radius: 99px;
-  background-color: blue;
+  /*background-color: blue; */
+  /*fix this to show active on clicked on nav  */
 }
 
 .nav-items {
@@ -65,22 +65,12 @@ nav > div:last-child > .active:after {
   width: 100%;
 }
 
-.indicator {
-  position: fixed;
-  left: 0;
-  right: 0;
-  top: 0;
-  height: 5px;
-  z-index: 60;
-  background-color: blue;
-}
-
 .details {
   z-index: 22;
   position: absolute;
   top: 240px;
   left: 60px;
-  color: #FFFFFF; 
+  color: #ffffff;
 }
 
 .details .place-box {
@@ -97,22 +87,22 @@ nav > div:last-child > .active:after {
   top: 0;
   left: 0;
   position: absolute;
-  content: "";
+  content: '';
   width: 30px;
   height: 4px;
   border-radius: 99px;
   background-color: white;
 }
 
-.details .title-1, 
+.details .title-1,
 .details .title-2 {
   font-weight: 600;
   font-size: 72px;
-  font-family: "Oswald", sans-serif;
+  font-family: 'Oswald', sans-serif;
   padding-top: 11px;
 }
 
-.details .title-box-1, 
+.details .title-box-1,
 .details .title-box-2 {
   margin-top: 2px;
   height: 100px;
@@ -129,22 +119,6 @@ nav > div:last-child > .active:after {
   margin-top: 24px;
   display: flex;
   align-items: center;
-}
-
-.details .cta > .bookmark {
-  border: none;
-  background-color: blue;
-  width: 36px;
-  height: 36px;
-  border-radius: 99px;
-  color: white;
-  display: grid;
-  place-items: center;
-}
-
-.details .cta > .bookmark svg {
-  width: 20px;
-  height: 20px;
 }
 
 .details .cta > .discover {

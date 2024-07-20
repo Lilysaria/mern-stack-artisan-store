@@ -1,12 +1,11 @@
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Oswald:wght@500&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Oswald:wght@500&display=swap');
 
 body {
   margin: 0;
   background-color: #1a1a1a;
-  color: #FFFFFFDD;
+  color: #ffffffdd;
   position: relative;
-  overflow: hidden;
-  font-family: "Inter", sans-serif;
+  font-family: 'Inter', sans-serif;
 }
 
 .details {
@@ -14,7 +13,7 @@ body {
   position: absolute;
   top: 240px;
   left: 60px;
-  color: #FFFFFF;
+  color: #ffffff;
 }
 
 .details .place-box {
@@ -31,7 +30,7 @@ body {
   top: 0;
   left: 0;
   position: absolute;
-  content: "";
+  content: '';
   width: 30px;
   height: 4px;
   border-radius: 99px;
@@ -42,7 +41,7 @@ body {
 .details .title-2 {
   font-weight: 600;
   font-size: 72px;
-  font-family: "Oswald", sans-serif;
+  font-family: 'Oswald', sans-serif;
   padding-top: 11px;
 }
 
@@ -63,22 +62,6 @@ body {
   margin-top: 24px;
   display: flex;
   align-items: center;
-}
-
-.details .cta .bookmark {
-  border: none;
-  background-color: #ecad29;
-  width: 36px;
-  height: 36px;
-  border-radius: 99px;
-  color: white;
-  display: grid;
-  place-items: center;
-}
-
-.details .cta .bookmark svg {
-  width: 20px;
-  height: 20px;
 }
 
 .details .cta .discover {
@@ -138,7 +121,7 @@ body {
 
 .pagination .progress-sub-foreground {
   height: 3px;
-  background-color: #ecad29;
+  background-color: #837147;
 }
 
 .pagination .slide-numbers {
