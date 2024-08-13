@@ -24,12 +24,20 @@ export default function SingleProductPage() {
   const addToCart = () => {
     try {
       const storedCart = JSON.parse(localStorage.getItem('cart')) || [];
-      const productExists = storedCart.find((item) => item.productId === productId);
+      const productExists = storedCart.find(
+        (item) => item.productId === productId
+      );
 
       if (productExists) {
         productExists.quantity += 1;
       } else {
-        storedCart.push({ productId, name: product.name, price: product.price, quantity: 1 });
+        storedCart.push({
+          productId,
+          name: product.name,
+          price: product.price,
+          imageUrl: product.imageUrl,
+          quantity: 1,
+        });
       }
 
       localStorage.setItem('cart', JSON.stringify(storedCart));
@@ -83,10 +91,17 @@ export default function SingleProductPage() {
             <>
               <h2>{product.name}</h2>
               <Image src={product.imageUrl} alt={product.name} />
-              <p>Description: <br />{product.description}</p>
+              <p>
+                Description: <br />
+                {product.description}
+              </p>
               <p>Price: ${product.price}</p>
-              <Button onClick={addToCart} color='green'>Add to Cart</Button>
-              <Button onClick={addToFavorites} color='blue'>Add to Favorites</Button>
+              <Button onClick={addToCart} color="green">
+                Add to Cart
+              </Button>
+              <Button onClick={addToFavorites} color="blue">
+                Add to Favorites
+              </Button>
             </>
           )}
         </Grid.Column>
