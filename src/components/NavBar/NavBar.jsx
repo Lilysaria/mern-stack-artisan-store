@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import './NavBar.css';
 
-const NavBar = () => {
+const NavBar = ({ user, onLogout }) => {
   return (
     <nav className="nav">
       <div className="nav-items">
@@ -14,7 +14,13 @@ const NavBar = () => {
         <Link to="/contact">Contact</Link>
         <Link to="/favorites">Favorites</Link>
         <Link to="/cart">Cart</Link>
-        <Link to="/login">Login</Link>
+        {user ? (
+          <button onClick={onLogout} className="logout-button">
+            Logout
+          </button>
+        ) : (
+          <Link to="/login">Login</Link>
+        )}
       </div>
     </nav>
   );

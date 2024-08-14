@@ -25,13 +25,24 @@ function App() {
     if (loggedInUser) setUser(loggedInUser);
   }
 
+  function handleLogout() {
+    userService.logout();
+    setUser(null);
+  }
+
   return (
     <div className="app-container">
-      <NavBar user={user} />
+      <NavBar user={user} onLogout={handleLogout} />
       <Routes>
         <Route path="/" element={<HomePage />} />
-        <Route path="/login" element={<LoginPage handleSignUpOrLogin={handleSignUpOrLogin} />} />
-        <Route path="/signup" element={<SignUpPage handleSignUpOrLogin={handleSignUpOrLogin} />} />
+        <Route
+          path="/login"
+          element={<LoginPage handleSignUpOrLogin={handleSignUpOrLogin} />}
+        />
+        <Route
+          path="/signup"
+          element={<SignUpPage handleSignUpOrLogin={handleSignUpOrLogin} />}
+        />
         <Route path="/products" element={<ProductsPage />} />
         <Route path="/product/:productId" element={<SingleProductPage />} />
         <Route path="/cart" element={<CartPage />} />

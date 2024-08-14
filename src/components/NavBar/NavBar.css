@@ -14,7 +14,7 @@ nav {
   top: 0;
   right: 0;
   color: #ffffff99;
-  z-index: 50;
+  z-index: 100;
   display: flex;
   align-items: center;
   justify-content: flex-end;
@@ -55,14 +55,31 @@ nav > div:last-child > .active:after {
   content: '';
   height: 3px;
   border-radius: 99px;
-  /*background-color: blue; */
-  /*fix this to show active on clicked on nav  */
 }
 
 .nav-items {
   display: flex;
   justify-content: flex-end;
   width: 100%;
+}
+
+.nav-items button.logout-button {
+  color: #402ad299;
+  padding: 0;
+  font-size: 14px;
+  text-transform: uppercase;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.nav-items button.logout-button:hover {
+  color: #ffffff;
+}
+
+.nav-items button.logout-button:focus {
+  outline: none;
 }
 
 .details {
@@ -168,12 +185,6 @@ nav > div:last-child > .active:after {
   height: 50px;
   display: flex;
   align-items: center;
-}
-
-.pagination .progress-sub-background {
-  width: 500px;
-  height: 3px;
-  background-color: #ffffff33;
 }
 
 .pagination .progress-sub-foreground {
