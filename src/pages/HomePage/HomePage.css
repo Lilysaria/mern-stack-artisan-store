@@ -113,16 +113,6 @@ body {
   align-items: center;
 }
 
-.pagination .progress-sub-background {
-  width: 500px;
-  height: 3px;
-  background-color: #ffffff33;
-}
-
-.pagination .progress-sub-foreground {
-  height: 3px;
-  background-color: #837147;
-}
 
 .pagination .slide-numbers {
   width: 50px;

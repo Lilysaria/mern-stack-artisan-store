@@ -1,10 +1,8 @@
 import React from 'react';
 import './HomePage.css';
-import NavBar from '../../components/NavBar/NavBar';
 
 const HomePage = () => (
   <div className="container">
-    <NavBar />
 
     <div id="demo" />
 
