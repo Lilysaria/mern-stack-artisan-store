@@ -35,7 +35,6 @@ const CartPage = () => {
 
   return (
     <div>
-      <h2>Your Shopping Cart</h2>
       <Cart products={cart.products} onDelete={handleDelete} />
       <p>Total Price: ${cart.totalPrice}</p>
       <button onClick={handleCheckout}>Proceed to Checkout</button>
