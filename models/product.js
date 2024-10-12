@@ -1,13 +1,13 @@
-const mongoose = require('mongoose');
+import mongoose from 'mongoose';
 
-const { Schema } = mongoose;
+const productSchema = new mongoose.Schema({
+  name: { type: String, required: true },
+  description: { type: String, required: true },
+  price: { type: Number, required: true },
+  imageUrl: { type: String, required: true },
+});
 
-const productSchema = new Schema({
-  name: String,
-  description: String,
-  price: Number,
-  imageUrl: String,
-  userId: { type: Schema.Types.ObjectId, ref: 'User' }, // references userSchema
-}, { timestamps: true });
+// check if model is already defined
+const Product = mongoose.models.Product || mongoose.model('Product', productSchema);
 
-module.exports = mongoose.model('Product', productSchema);
+export default Product;
