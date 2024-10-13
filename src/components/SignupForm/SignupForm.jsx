@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import { saveToken } from '../../utils/auth';
-import { Link } from 'react-router-dom';
-import './SignupForm.css';
+import Link from 'next/link';
+import { useRouter } from 'next/router';
+import styles from './SignupForm.module.css';
 
 const SignupForm = () => {
   const [formData, setFormData] = useState({
@@ -12,6 +13,7 @@ const SignupForm = () => {
   });
 
   const [error, setError] = useState('');
+  const router = useRouter();
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -21,8 +23,12 @@ const SignupForm = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post('/api/users/signup', formData);
+      const response = await axios.post('/api/users', {
+        ...formData,
+        action: 'signup'
+      });
       saveToken(response.data.token);
+      router.push('/dashboard'); // redirect to dashboard after successful signup
     } catch (error) {
       if (
         error.response &&
@@ -37,10 +43,10 @@ const SignupForm = () => {
   };
 
   return (
-    <div className="signup-container">
-      <form onSubmit={handleSubmit} className="signup-form">
+    <div className={styles['signup-container']}>
+      <form onSubmit={handleSubmit} className={styles['signup-form']}>
         <h2>Sign Up</h2>
-        <div className="form-group">
+        <div className={styles['form-group']}>
           <label>Email:</label>
           <input
             type="email"
@@ -50,7 +56,7 @@ const SignupForm = () => {
             required
           />
         </div>
-        <div className="form-group">
+        <div className={styles['form-group']}>
           <label>Password:</label>
           <input
             type="password"
@@ -60,7 +66,7 @@ const SignupForm = () => {
             required
           />
         </div>
-        <div className="form-group">
+        <div className={styles['form-group']}>
           <label>Username:</label>
           <input
             type="text"
@@ -70,12 +76,12 @@ const SignupForm = () => {
             required
           />
         </div>
-        <button type="submit" className="signup-button">
+        <button type="submit" className={styles['signup-button']}>
           Sign Up
         </button>
-        {error && <p className="error-message">{error}</p>}
-        <p className="signup-link">
-          Already have an account? <Link to="/login">Login here</Link>
+        {error && <p className={styles['error-message']}>{error}</p>}
+        <p className={styles['signup-link']}>
+          Already have an account? <Link href="/login">Login here</Link>
         </p>
       </form>
     </div>

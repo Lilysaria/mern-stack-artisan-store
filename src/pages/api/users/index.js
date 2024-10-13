@@ -21,9 +21,14 @@ export default async function handler(req, res) {
         try {
           const user = new User({ email, password, username });
           await user.save();
-          res.status(201).json({ message: 'User created successfully' });
+          
+          // generate JWT token after successful signup
+          const token = jwt.sign({ userId: user._id }, process.env.SECRET, { expiresIn: '1h' });
+          
+          res.status(201).json({ message: 'User created successfully', token });
         } catch (error) {
-          res.status(400).json({ message: 'User creation failed', error });
+          console.error('Signup error:', error);
+          res.status(400).json({ message: 'User creation failed', error: error.message });
         }
       } else if (req.body.action === 'login') {
         const { email, password } = req.body;
@@ -37,11 +42,13 @@ export default async function handler(req, res) {
           const token = jwt.sign({ userId: user._id }, process.env.SECRET, { expiresIn: '1h' });
           
           
-          // respond with the token
+          // espond with the token
           res.status(200).json({ token });
         } catch (error) {
           res.status(500).json({ message: 'Login failed', error });
         }
+      } else {
+        res.status(400).json({ message: 'Invalid action' });
       }
       break;
 
