@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import { saveToken } from '../../utils/auth';
-import { Link } from 'react-router-dom';
-import './LoginForm.css';
+import Link from 'next/link';
+import styles from './LoginForm.module.css';
 
 const LoginForm = ({ handleSignUpOrLogin }) => {
   const [formData, setFormData] = useState({
@@ -18,19 +18,21 @@ const LoginForm = ({ handleSignUpOrLogin }) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post('/api/users/login', formData);
+      const response = await axios.post('/api/users', { ...formData, action: 'login' });
+      console.log('Login successful:', response.data);
       saveToken(response.data.token);
       handleSignUpOrLogin();
     } catch (error) {
-      console.error('Login Error', error);
+      console.error('Login Error:', error.response?.data || error);
     }
   };
+  
 
   return (
-    <div className="login-container">
-      <form onSubmit={handleSubmit} className="login-form">
+    <div className={styles.loginContainer}>
+      <form onSubmit={handleSubmit} className={styles.loginForm}>
         <h2>Login</h2>
-        <div className="form-group">
+        <div className={styles.formGroup}>
           <label>Email:</label>
           <input
             type="email"
@@ -40,7 +42,7 @@ const LoginForm = ({ handleSignUpOrLogin }) => {
             required
           />
         </div>
-        <div className="form-group">
+        <div className={styles.formGroup}>
           <label>Password:</label>
           <input
             type="password"
@@ -50,9 +52,9 @@ const LoginForm = ({ handleSignUpOrLogin }) => {
             required
           />
         </div>
-        <button type="submit" className="login-button">Login</button>
-        <p className="signup-link">
-          Don't have an account? <Link to="/signup">Sign up here</Link>
+        <button type="submit" className={styles.loginButton}>Login</button>
+        <p className={styles.signupLink}>
+          Don't have an account? <Link href="/signup">Sign up here</Link>
         </p>
       </form>
     </div>

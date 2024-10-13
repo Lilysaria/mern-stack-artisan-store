@@ -1,14 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Oswald:wght@500&display=swap');
 
-body {
-  margin: 0;
-  background-color: #1a1a1a;
-  color: blue;
-  position: relative;
-  font-family: 'Inter', sans-serif;
-}
 
-nav {
+
+.navbar {
   position: fixed;
   left: 0;
   top: 0;
@@ -22,32 +16,32 @@ nav {
   font-weight: 500;
 }
 
-nav svg,
-nav .svg-container {
+.navbar svg,
+.navbar .svg-container {
   width: 20px;
   height: 20px;
 }
 
-nav > div {
+.navbar > div {
   display: inline-flex;
   align-items: center;
   text-transform: uppercase;
   font-size: 14px;
 }
 
-nav > div:first-child {
+.navbar > div:first-child {
   gap: 10px;
 }
 
-nav > div:last-child {
+.navbar > div:last-child {
   gap: 24px;
 }
 
-nav > div:last-child > .active {
+.navbar > div:last-child > .active {
   position: relative;
 }
 
-nav > div:last-child > .active:after {
+.navbar > div:last-child > .active:after {
   bottom: -8px;
   left: 0;
   right: 0;
@@ -57,13 +51,13 @@ nav > div:last-child > .active:after {
   border-radius: 99px;
 }
 
-.nav-items {
+.navbar-items {
   display: flex;
   justify-content: flex-end;
   width: 100%;
 }
 
-.nav-items button.logout-button {
+.navbar-items button.logout-button {
   color: #402ad299;
   padding: 0;
   font-size: 14px;
@@ -74,11 +68,11 @@ nav > div:last-child > .active:after {
   font-weight: 500;
 }
 
-.nav-items button.logout-button:hover {
+.navbar-items button.logout-button:hover {
   color: #ffffff;
 }
 
-.nav-items button.logout-button:focus {
+.navbar-items button.logout-button:focus {
   outline: none;
 }
 

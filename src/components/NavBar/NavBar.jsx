@@ -1,25 +1,25 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-import './NavBar.css';
+import Link from 'next/link';
+import styles from './NavBar.module.css';
 
 const NavBar = ({ user, onLogout }) => {
   return (
-    <nav className="nav">
-      <div className="nav-items">
-        <Link to="/" className="active">
+    <nav className={styles.navbar}>
+      <div className={styles.navbarItems}>
+        <Link href="/" className={styles.active}>
           Home
         </Link>
-        <Link to="/products">Products</Link>
-        <Link to="/about">About</Link>
-        <Link to="/contact">Contact</Link>
-        <Link to="/favorites">Favorites</Link>
-        <Link to="/cart">Cart</Link>
+        <Link href="/products">Products</Link>
+        <Link href="/about">About</Link>
+        <Link href="/contact">Contact</Link>
+        <Link href="/favorites">Favorites</Link>
+        <Link href="/cart">Cart</Link>
         {user ? (
-          <button onClick={onLogout} className="logout-button">
+          <button onClick={onLogout} className={styles.logoutButton}>
             Logout
           </button>
         ) : (
-          <Link to="/login">Login</Link>
+          <Link href="/login">Login</Link>
         )}
       </div>
     </nav>

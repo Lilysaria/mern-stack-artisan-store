@@ -1,5 +1,5 @@
-const mongoose = require("mongoose");
-const bcrypt = require("bcrypt");
+import mongoose from "mongoose";
+import bcrypt from "bcrypt";
 
 const SALT_ROUNDS = 10;
 
@@ -29,6 +29,7 @@ userSchema.set("toObject", {
   },
 });
 
+// hash password before saving
 userSchema.pre("save", function (next) {
   const user = this;
   if (!user.isModified("password")) return next();
@@ -39,8 +40,12 @@ userSchema.pre("save", function (next) {
   });
 });
 
+// method to compare password
 userSchema.methods.comparePassword = function (tryPassword) {
   return bcrypt.compare(tryPassword, this.password);
 };
 
-module.exports = mongoose.model("User", userSchema);
+// check if the model is already defined
+const User = mongoose.models.User || mongoose.model("User", userSchema);
+
+export default User;
