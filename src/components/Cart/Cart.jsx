@@ -1,24 +1,24 @@
 import React from 'react';
-import './Cart.css';
+import styles from './Cart.module.css';
 
 const Cart = ({ products, onDelete }) => {
   return (
-    <div className="cart">
+    <div className={styles.cart}>
       <ul>
         {products.map((product, index) => (
-          <li key={index} className="cart-item">
+          <li key={index} className={styles.cartItem}>
             <img
               src={product.imageUrl}
               alt={product.name}
-              className="cart-item-image"
+              className={styles.cartItemImage}
             />
-            <div className="cart-item-details">
-              <p className="cart-item-name">{product.name}</p>
-              <p className="cart-item-price">${product.price}</p>
+            <div className={styles.cartItemDetails}>
+              <p className={styles.cartItemName}>{product.name}</p>
+              <p className={styles.cartItemPrice}>${product.price}</p>
             </div>
             <button
               onClick={() => onDelete(product.productId)}
-              className="delete-button"
+              className={styles.deleteButton}
             >
               Delete
             </button>
