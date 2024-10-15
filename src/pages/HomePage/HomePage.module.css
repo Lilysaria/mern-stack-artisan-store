@@ -1,7 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Oswald:wght@500&display=swap');
 
-body {
-  margin: 0;
+.container {
   background-color: #1a1a1a;
   color: #ffffffdd;
   position: relative;
@@ -16,17 +15,17 @@ body {
   color: #ffffff;
 }
 
-.details .place-box {
+.placeBox {
   height: 46px;
   overflow: hidden;
 }
 
-.details .place-box .text {
+.text {
   padding-top: 16px;
   font-size: 20px;
 }
 
-.details .place-box .text:before {
+.text:before {
   top: 0;
   left: 0;
   position: absolute;
@@ -37,34 +36,34 @@ body {
   background-color: white;
 }
 
-.details .title-1,
-.details .title-2 {
+.title1,
+.title2 {
   font-weight: 600;
   font-size: 72px;
   font-family: 'Oswald', sans-serif;
   padding-top: 11px;
 }
 
-.details .title-box-1,
-.details .title-box-2 {
+.titleBox1,
+.titleBox2 {
   margin-top: 2px;
   height: 100px;
   padding-top: 7px;
 }
 
-.details .desc {
+.desc {
   margin-top: 16px;
   width: 500px;
 }
 
-.details .cta {
+.cta {
   width: 500px;
   margin-top: 24px;
   display: flex;
   align-items: center;
 }
 
-.details .cta .discover {
+.discover {
   border: 1px solid #ffffff;
   background-color: transparent;
   height: 36px;
@@ -83,7 +82,7 @@ body {
   display: inline-flex;
 }
 
-.pagination .arrow {
+.arrow {
   z-index: 60;
   width: 50px;
   height: 50px;
@@ -93,18 +92,11 @@ body {
   place-items: center;
 }
 
-.pagination .arrow:nth-child(2) {
+.arrow:nth-child(2) {
   margin-left: 20px;
 }
 
-.pagination svg {
-  width: 24px;
-  height: 24px;
-  stroke-width: 2;
-  color: #ffffff99;
-}
-
-.pagination .progress-sub-container {
+.progressSubContainer {
   margin-left: 24px;
   z-index: 60;
   width: 500px;
@@ -113,8 +105,7 @@ body {
   align-items: center;
 }
 
-
-.pagination .slide-numbers {
+.slideNumbers {
   width: 50px;
   height: 50px;
   overflow: hidden;
@@ -122,7 +113,7 @@ body {
   position: relative;
 }
 
-.pagination .slide-numbers .item {
+.item {
   width: 50px;
   height: 50px;
   position: absolute;

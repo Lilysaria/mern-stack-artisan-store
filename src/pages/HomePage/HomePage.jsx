@@ -1,22 +1,20 @@
 import React from 'react';
-import './HomePage.css';
+import styles from './HomePage.module.css';
 
 const HomePage = () => (
-  <div className="container">
-
+  <div className={styles.container}>
     <div id="demo" />
-
-    <div className="details" id="details-even">
-      <div className="place-box">
-        <div className="text">Welcome to FairyFinds</div>
+    <div className={`${styles.details} ${styles.detailsEven}`}>
+      <div className={styles.placeBox}>
+        <div className={styles.text}>Welcome to FairyFinds</div>
       </div>
-      <div className="title-box-1">
-        <div className="title-1">Artisan Wreaths</div>
+      <div className={styles.titleBox1}>
+        <div className={styles.title1}>Artisan Wreaths</div>
       </div>
-      <div className="title-box-2">
-        <div className="title-2">& Crystal Jewelry</div>
+      <div className={styles.titleBox2}>
+        <div className={styles.title2}>& Crystal Jewelry</div>
       </div>
-      <div className="desc">
+      <div className={styles.desc}>
         Welcome to FairyFinds, where modern elegance meets artisan
         craftsmanship. Nestled in a quaint corner, our shop delights young women
         with beautifully curated wreaths, sparkling crystal jewelry, and
@@ -25,24 +23,21 @@ const HomePage = () => (
         with their charm and affordability. Step into a world of creativity and
         charm – discover your next favorite piece at FairyFinds today.
       </div>
-
-      <div className="cta">
-        <button type="button" className="discover">
+      <div className={styles.cta}>
+        <button type="button" className={styles.discover}>
           Shop Goods
         </button>
       </div>
     </div>
-
-    <div className="pagination" id="pagination">
-      <div className="progress-sub-container">
-        <div className="progress-sub-background">
-          <div className="progress-sub-foreground" />
+    <div className={styles.pagination} id="pagination">
+      <div className={styles.progressSubContainer}>
+        <div className={styles.progressSubBackground}>
+          <div className={styles.progressSubForeground} />
         </div>
       </div>
-      <div className="slide-numbers" id="slide-numbers" />
+      <div className={styles.slideNumbers} id="slide-numbers" />
     </div>
-
-    <div className="cover" />
+    <div className={styles.cover} />
   </div>
 );
 
