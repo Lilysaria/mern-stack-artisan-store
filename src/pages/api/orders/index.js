@@ -1,5 +1,4 @@
-import dbConnect from '../../../utils/dbConnect';
-import Order from '../../../models/order';
+import Order from '../../../../models/order';
 
 // this file serves as an API route handler in Nextjs, replacing the previous Express route
 

@@ -20,7 +20,7 @@ const HomePage = () => (
         Welcome to FairyFinds, where modern elegance meets artisan
         craftsmanship. Nestled in a quaint corner, our shop delights young women
         with beautifully curated wreaths, sparkling crystal jewelry, and
-        handcrafted cedar garments. Whether you're seeking a unique gift or
+        handcrafted cedar garments. Whether you&apos;re seeking a unique gift or
         treating yourself, FairyFinds offers exquisite pieces that captivate
         with their charm and affordability. Step into a world of creativity and
         charm – discover your next favorite piece at FairyFinds today.

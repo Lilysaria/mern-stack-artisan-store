@@ -26,15 +26,15 @@ const LoginForm = ({ handleSignUpOrLogin }) => {
       console.error('Login Error:', error.response?.data || error);
     }
   };
-  
 
   return (
     <div className={styles.loginContainer}>
       <form onSubmit={handleSubmit} className={styles.loginForm}>
         <h2>Login</h2>
         <div className={styles.formGroup}>
-          <label>Email:</label>
+          <label htmlFor="email">Email:</label>
           <input
+            id="email"
             type="email"
             name="email"
             value={formData.email}
@@ -43,8 +43,9 @@ const LoginForm = ({ handleSignUpOrLogin }) => {
           />
         </div>
         <div className={styles.formGroup}>
-          <label>Password:</label>
+          <label htmlFor="password">Password:</label>
           <input
+            id="password"
             type="password"
             name="password"
             value={formData.password}
@@ -54,7 +55,7 @@ const LoginForm = ({ handleSignUpOrLogin }) => {
         </div>
         <button type="submit" className={styles.loginButton}>Login</button>
         <p className={styles.signupLink}>
-          Don't have an account? <Link href="/signup">Sign up here</Link>
+          Don&apos;t have an account? <Link href="/signup">Sign up here</Link>
         </p>
       </form>
     </div>
