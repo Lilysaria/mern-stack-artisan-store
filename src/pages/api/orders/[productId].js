@@ -1,4 +1,4 @@
-import Order from '../../../../models/order.js';
+import Order from '../../../../../models/order.js';
 
 export default async function handler(req, res) {
   await dbConnect();
