@@ -1,4 +1,4 @@
-import Order from '../../../../models/order';
+import Order from '../../../../models/order.js';
 
 // this file serves as an API route handler in Nextjs, replacing the previous Express route
 
