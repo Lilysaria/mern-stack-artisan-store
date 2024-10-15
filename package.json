@@ -9,7 +9,8 @@
     "start": "next start",
     "lint": "next lint",
     "prepare": "husky install",
-    "test": "echo \"No tests specified\" && exit 0"
+    "test": "echo \"No tests specified\" && exit 0",
+    "postinstall": "next build"
   },
   "dependencies": {
     "@stripe/react-stripe-js": "^2.7.3",
