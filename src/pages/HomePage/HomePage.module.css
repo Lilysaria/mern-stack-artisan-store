@@ -1,140 +1,143 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Oswald:wght@500&display=swap');
 
 .container {
-  background-color: #1a1a1a;
-  color: #ffffffdd;
-  position: relative;
   font-family: 'Inter', sans-serif;
+  color: #333;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
 }
 
-.details {
-  z-index: 22;
-  position: absolute;
-  top: 240px;
-  left: 60px;
-  color: #ffffff;
+.hero {
+  background-image: url('https://res.cloudinary.com/dgtqptpu1/image/upload/v1729025816/Neidpath_Farms_jt8lhe.jpg');
+  background-size: cover;
+  background-position: center;
+  height: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #fff;
+  margin-bottom: 40px;
 }
 
-.placeBox {
-  height: 46px;
-  overflow: hidden;
+.heroContent {
+  background-color: rgba(156, 77, 118, 0.23);
+  padding: 40px;
+  border-radius: 10px;
 }
 
-.text {
-  padding-top: 16px;
-  font-size: 20px;
-}
-
-.text:before {
-  top: 0;
-  left: 0;
-  position: absolute;
-  content: '';
-  width: 30px;
-  height: 4px;
-  border-radius: 99px;
-  background-color: white;
-}
-
-.title1,
-.title2 {
-  font-weight: 600;
-  font-size: 72px;
+.title {
   font-family: 'Oswald', sans-serif;
-  padding-top: 11px;
+  font-size: 3rem;
+  margin-bottom: 20px;
 }
 
-.titleBox1,
-.titleBox2 {
-  margin-top: 2px;
-  height: 100px;
-  padding-top: 7px;
+.subtitle {
+  font-size: 1.2rem;
+  margin-bottom: 30px;
 }
 
-.desc {
-  margin-top: 16px;
-  width: 500px;
+.ctaButton {
+  background-color: #f04bcca4;
+  color: #111;
+  padding: 12px 24px;
+  font-size: 1.1rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  text-decoration: none;
 }
 
-.cta {
-  width: 500px;
-  margin-top: 24px;
-  display: flex;
-  align-items: center;
+.ctaButton:hover {
+  background-color: #842e99;
 }
 
-.discover {
-  border: 1px solid #ffffff;
-  background-color: transparent;
-  height: 36px;
-  border-radius: 99px;
-  color: #ffffff;
-  padding: 4px 24px;
-  font-size: 12px;
-  margin-left: 16px;
-  text-transform: uppercase;
+.featuredProducts, .categories, .testimonials {
+  margin-bottom: 60px;
 }
 
-.pagination {
-  position: absolute;
-  left: 0;
-  top: 0;
-  display: inline-flex;
+.sectionTitle {
+  font-size: 2rem;
+  text-align: center;
+  margin-bottom: 30px;
 }
 
-.arrow {
-  z-index: 60;
-  width: 50px;
-  height: 50px;
-  border-radius: 999px;
-  border: 2px solid #ffffff55;
+.productGrid, .categoryGrid {
   display: grid;
-  place-items: center;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
 }
 
-.arrow:nth-child(2) {
-  margin-left: 20px;
+.productCard, .categoryCard {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 20px;
+  text-align: center;
+  transition: transform 0.3s;
 }
 
-.progressSubContainer {
-  margin-left: 24px;
-  z-index: 60;
-  width: 500px;
-  height: 50px;
-  display: flex;
-  align-items: center;
+.productCard:hover, .categoryCard:hover {
+  transform: translateY(-5px);
 }
 
-.slideNumbers {
-  width: 50px;
-  height: 50px;
-  overflow: hidden;
-  z-index: 60;
-  position: relative;
+.productName, .categoryName {
+  font-size: 1.2rem;
+  margin: 10px 0;
 }
 
-.item {
-  width: 50px;
-  height: 50px;
-  position: absolute;
+.productPrice {
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.addToCartButton {
+  background-color: #4CAF50;
   color: white;
-  top: 0;
-  left: 0;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.addToCartButton:hover {
+  background-color: #45a049;
+}
+
+.testimonialGrid {
   display: grid;
-  place-items: center;
-  font-size: 32px;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.testimonialCard {
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  padding: 20px;
+  text-align: center;
+}
+
+.testimonialText {
+  font-style: italic;
+  margin-bottom: 10px;
+}
+
+.customerName {
   font-weight: bold;
 }
 
-.cover {
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 100vw;
-  height: 100vh;
-  background-color: #fff;
-  z-index: 20;
-  background-image: url('https://res.cloudinary.com/dgtqptpu1/image/upload/v1719958426/fairygardien5_ailu6w.jpg');
-  background-size: cover;
-  background-position: center;
+@media (max-width: 768px) {
+  .title {
+    font-size: 2rem;
+  }
+
+  .subtitle {
+    font-size: 1rem;
+  }
+
+  .productGrid, .categoryGrid, .testimonialGrid {
+    grid-template-columns: 1fr;
+  }
 }

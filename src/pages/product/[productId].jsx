@@ -1,8 +1,9 @@
 import { useRouter } from 'next/router';
 import { useState, useEffect } from 'react';
-import { Image, Grid, Button } from 'semantic-ui-react';
+import { Image, Grid, Button, Icon } from 'semantic-ui-react';
 import axios from 'axios';
 import { getToken, getUserIdFromToken } from '../../utils/auth';
+import styles from '../../styles/productId.module.css';
 
 // define the main component
 export default function SingleProductPage() {
@@ -103,23 +104,39 @@ export default function SingleProductPage() {
   return (
     <Grid>
       <Grid.Row centered>
-        <Grid.Column style={{ maxWidth: 750 }}>
+        <Grid.Column style={{ maxWidth: 1200 }}>
           {product && (
-            <>
-              <h2>{product.name}</h2>
-              <Image src={product.imageUrl} alt={product.name} />
-              <p>
-                Description: <br />
-                {product.description}
-              </p>
-              <p>Price: ${product.price}</p>
-              <Button onClick={addToCart} color="green">
-                Add to Cart
-              </Button>
-              <Button onClick={addToFavorites} color="blue">
-                Add to Favorites
-              </Button>
-            </>
+            <div className={styles.productContainer}>
+              <div className={styles.productImageContainer}>
+                <Image 
+                  src={product.imageUrl} 
+                  alt={product.name} 
+                  className={styles.productImage}
+                />
+              </div>
+              <div className={styles.productDetails}>
+                <div>
+                  <h1 className={styles.productName}>{product.name}</h1>
+                  <p className={styles.price}>${product.price.toFixed(2)}</p>
+                  <h2 className={styles.descriptionLabel}>Product Details</h2>
+                  <p className={styles.description}>{product.description}</p>
+                </div>
+                <div className={styles.buttonContainer}>
+                  <Button 
+                    onClick={addToCart} 
+                    className={styles.addToCartButton}
+                  >
+                    <Icon name='shopping cart' /> Add to Cart
+                  </Button>
+                  <Button 
+                    onClick={addToFavorites} 
+                    className={styles.addToFavoritesButton}
+                  >
+                    <Icon name='heart outline' /> Add to Favorites
+                  </Button>
+                </div>
+              </div>
+            </div>
           )}
         </Grid.Column>
       </Grid.Row>
