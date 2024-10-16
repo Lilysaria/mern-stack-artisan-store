@@ -78,15 +78,15 @@ const HomePage = () => (
       <h2 className={styles.sectionTitle}>What Our Customers Say</h2>
       <div className={styles.testimonialGrid}>
         <div className={styles.testimonialCard}>
-          <p className={styles.testimonialText}>"The cedar wreath I ordered is absolutely stunning! The moment I opened the package, the fresh, woodsy scent filled the room. It's like having a piece of the forest right in my home."</p>
+          <p className={styles.testimonialText}>&quot;The cedar wreath I ordered is absolutely stunning! The moment I opened the package, the fresh, woodsy scent filled the room. It's like having a piece of the forest right in my home.&quot;</p>
           <p className={styles.customerName}>- Sarah J.</p>
         </div>
         <div className={styles.testimonialCard}>
-          <p className={styles.testimonialText}>"I'm in love with my new crystal jewelry! The natural, raw beauty of the stones is breathtaking. Each piece feels unique and special, just like nature intended."</p>
+          <p className={styles.testimonialText}>&quot;I'm in love with my new crystal jewelry! The natural, raw beauty of the stones is breathtaking. Each piece feels unique and special, just like nature intended.&quot;</p>
           <p className={styles.customerName}>- Michael T.</p>
         </div>
         <div className={styles.testimonialCard}>
-          <p className={styles.testimonialText}>"The dried flower frame I purchased is a work of art. The delicate arrangement and soft colors bring a touch of natural elegance to my living room. It's like having a perpetual spring indoors!"</p>
+          <p className={styles.testimonialText}>&quot;The dried flower frame I purchased is a work of art. The delicate arrangement and soft colors bring a touch of natural elegance to my living room. It's like having a perpetual spring indoors!&quot;</p>
           <p className={styles.customerName}>- Emily R.</p>
         </div>
       </div>

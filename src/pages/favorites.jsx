@@ -55,7 +55,7 @@ const FavoritesPage = () => {
           ))}
         </div>
       ) : (
-        <p className={styles.message}>You haven't added any favorites yet.</p>
+        <p className={styles.message}>You haven&apos;t added any favorites yet.</p>
       )}
     </div>
   );
