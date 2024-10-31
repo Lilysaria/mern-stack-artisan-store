@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
 import Cart from '../components/Cart/Cart';
+import styles from '../components/Cart/Cart.module.css';
 
 const CartPage = () => {
   const [cart, setCart] = useState({ products: [], totalPrice: 0 });
@@ -29,13 +30,19 @@ const CartPage = () => {
     localStorage.setItem('cart', JSON.stringify(updatedCart));
   };
 
-  if (!cart.products.length) return <p>Your cart is empty</p>;
-
   return (
     <div>
       <Cart products={cart.products} onDelete={handleDelete} />
-      <p>Total Price: ${cart.totalPrice}</p>
-      <button onClick={handleCheckout}>Proceed to Checkout</button>
+      {cart.products.length > 0 && (
+        <>
+        <div className={styles.centered}>
+  <p>Total Price: ${cart.totalPrice}</p>
+  <button className={styles.button} onClick={handleCheckout}>
+    Proceed to Checkout
+  </button>
+</div>
+        </>
+      )}
     </div>
   );
 };

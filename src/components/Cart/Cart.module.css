@@ -1,9 +1,10 @@
 .cart {
-  padding: 20px;
+  padding: 80px;
   background-color: #f8f9fa;
   border-radius: 8px;
   max-width: 800px;
   margin: 0 auto;
+  margin-top: 60px;
 }
 
 .cart ul {
@@ -24,7 +25,6 @@
   height: auto;
   max-height: 100px;
   object-fit: contain;
-  border-radius: 8px;
   margin-right: 20px;
 }
 
@@ -56,40 +56,87 @@
   text-align: right;
 }
 
-.checkoutButton {
-  display: block;
-  width: 100%;
-  padding: 10px;
-  background-color: #28a745;
-  color: #fff;
-  border: none;
-  border-radius: 5px;
+.button {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: transparent;
+  color: #010101;
+  border: 2px solid #28a745;
+  border-radius: 0;
   cursor: pointer;
-  font-size: 18px;
-  margin-top: 20px;
+  font-size: 16px;
   text-align: center;
+  transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+  text-decoration: none;
 }
 
-.checkoutButton:hover {
-  background-color: #218838;
+.button:hover {
+  background-color: #090e0a;
+  color: white;
 }
 
 .deleteButton {
-  background-color: red;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  padding: 3px 6px;
-  font-size: 10px;
+  background-color: transparent;
+  color: #070505;
+  border: 2px solid #110d0e;
+  padding: 5px 10px;
+  font-size: 14px;
   cursor: pointer;
-  display: inline-block;
-  max-width: 50px;
-  white-space: nowrap;
-  text-align: center;
-  overflow: hidden;
-  text-overflow: ellipsis;
+  transition: background-color 0.3s, color 0.3s;
+  border-radius: 0;
+  margin-left: 10px;
 }
 
 .deleteButton:hover {
-  background-color: darkred;
+  background-color: #131111;
+  color: white;
+}
+
+.cartPage {
+  padding: 80px 20px;
+}
+
+.emptyCartMessage {
+  text-align: center;
+  padding: 80px;
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  max-width: 600px;
+  margin-top: 200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.emptyCartMessage h2 {
+  font-size: 24px;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.emptyCartMessage p {
+  font-size: 18px;
+  color: #555;
+  margin-bottom: 20px;
+}
+
+.shopNowButton {
+  padding: 10px 20px;
+  background-color: #28a745;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 18px;
+  transition: background-color 0.3s;
+}
+
+.shopNowButton:hover {
+  background-color: #218838;
+}
+
+.centered {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
 }

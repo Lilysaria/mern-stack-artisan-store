@@ -2,6 +2,16 @@ import React from 'react';
 import styles from './Cart.module.css';
 
 const Cart = ({ products, onDelete }) => {
+  if (products.length === 0) {
+    return (
+      <div className={styles.emptyCartMessage}>
+        <h2>Your Cart is Empty</h2>
+        <p>It looks like you haven't added anything to your cart yet.</p>
+        <p>Browse our collection and find something you love!</p>
+      </div>
+    );
+  }
+
   return (
     <div className={styles.cart}>
       <ul>

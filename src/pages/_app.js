@@ -2,6 +2,9 @@ import { useState, useEffect } from 'react';
 import { useRouter } from 'next/router';
 import NavBar from '../components/NavBar/NavBar';
 import userService from '../utils/userService';
+import 'semantic-ui-css/semantic.min.css';
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
 import '../../globals.css';
 
 function MyApp({ Component, pageProps }) {

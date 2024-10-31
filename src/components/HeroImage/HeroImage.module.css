@@ -1,0 +1,93 @@
+.hero {
+    width: 100vw;
+    height: 95vh;
+    background: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)), url('https://res.cloudinary.com/dgtqptpu1/image/upload/v1729025816/Neidpath_Farms_jt8lhe.jpg');
+    background-size: cover;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+  
+  .headerText {
+    width: 500px;
+    text-align: center;
+  }
+  
+  .headerText h1 {
+    margin-bottom: 10px;
+    font-family: 'League Spartan', sans-serif;
+    font-weight: 500;
+    font-size: 45px;
+    color: white;
+  }
+  
+  #photography {
+    font-size: 60px;
+    letter-spacing: 0.5px;
+  }
+  
+  .headerText p {
+    margin-bottom: 20px;
+    font-family: 'Open Sans', Helvetica, sans-serif;
+    color: white;
+    font-size: 18px;
+  }
+  
+  .learnMoreButton {
+    border: 2px solid white;
+    color: white;
+    font-family: 'Roboto', Segoe UI, calibri, Helvetica, serif;
+    padding: 10px;
+    font-size: 18px;
+    width: 160px;
+    border-radius: 500px;
+    cursor: pointer;
+    background-color: transparent;
+    transition: all 0.2s ease-in-out;
+  }
+  
+  .learnMoreButton:hover {
+    background-color: white;
+    color: black;
+  }
+  
+  @media screen and (max-width: 676px) {
+    .headerText {
+      width: 95%;
+      text-align: center;
+    }
+  }
+  
+  @media screen and (max-width: 601px) {
+    #photography {
+      font-size: 45px;
+    }
+    .headerText h1 {
+      font-size: 30px;
+    }
+    .headerText p {
+      font-size: 15px;
+      width: 85%;
+      display: block;
+      margin: auto;
+      margin-bottom: 20px;
+    }
+    .learnMoreButton {
+      font-size: 16px;
+      width: 140px;
+    }
+  }
+  
+  @media screen and (max-width: 460px) {
+    #photography {
+      font-size: 35px;
+    }
+    .headerText h1 {
+      font-size: 28px;
+    }
+  }
