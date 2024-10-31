@@ -1,4 +1,5 @@
 import React from 'react';
+import Image from 'next/image';
 import styles from './Cart.module.css';
 
 const Cart = ({ products, onDelete }) => {
@@ -6,7 +7,7 @@ const Cart = ({ products, onDelete }) => {
     return (
       <div className={styles.emptyCartMessage}>
         <h2>Your Cart is Empty</h2>
-        <p>It looks like you haven't added anything to your cart yet.</p>
+        <p>It looks like you haven&apos;t added anything to your cart yet.</p>
         <p>Browse our collection and find something you love!</p>
       </div>
     );
@@ -17,9 +18,11 @@ const Cart = ({ products, onDelete }) => {
       <ul>
         {products.map((product, index) => (
           <li key={index} className={styles.cartItem}>
-            <img
+            <Image
               src={product.imageUrl}
               alt={product.name}
+              width={100}
+              height={100}
               className={styles.cartItemImage}
             />
             <div className={styles.cartItemDetails}>
